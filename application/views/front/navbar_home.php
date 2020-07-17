@@ -117,11 +117,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div id="logo" class="pull-left" style="padding-top: 0px;">
         <img src="<?php echo base_url();?>assets/img/Logo-sefid.png" alt="" style="height: 65px;padding: 0;">
         <?php if($this->session->userdata('site_lang') == 'english') {  ?>
-        <a href="<?php echo base_url(); ?>MultiLanguageSwitcher/switch/persian" style="float: left;padding: 5px;color: white;font-size: medium;">FA</a>
+        <a href="<?php echo base_url(); ?>MultiLanguageSwitcher/_switch/persian" style="float: left;padding: 5px;color: white;font-size: medium;">FA</a>
         <?php }else if($this->session->userdata('site_lang') == 'persian'){ ?>
-          <a href="<?php echo base_url(); ?>MultiLanguageSwitcher/switch/english" style="float: left;padding: 5px;color: white;font-size: medium;">EN</a>
+          <a href="<?php echo base_url(); ?>MultiLanguageSwitcher/_switch/english" style="float: left;padding: 5px;color: white;font-size: medium;">EN</a>
         <?php }else{?>
-          <a href="<?php echo base_url(); ?>MultiLanguageSwitcher/switch/persian" style="float: left;padding: 5px;color: white;font-size: medium;">FA</a>
+          <a href="<?php echo base_url(); ?>MultiLanguageSwitcher/_switch/persian" style="float: left;padding: 5px;color: white;font-size: medium;">FA</a>
         <?php } ?>
       </div>
 
@@ -176,7 +176,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <li ><a href="<?php echo site_url("Pages/about_us")?> "> <?php echo $this->lang->line('text_menu_ABOUT_US_header'); ?></a></li>
           <li ><a href="<?php echo site_url("Pages/contact_us")?> "> <?php echo $this->lang->line('text_menu_Contact_header'); ?></a></li>
         <!-- <li>
-        <select class="form-control" onchange="javascript:window.location.href='<?php echo base_url(); ?>MultiLanguageSwitcher/switch/'+this.value;" style="height: 29px;">
+        <select class="form-control" onchange="javascript:window.location.href='<?php echo base_url(); ?>MultiLanguageSwitcher/_switch/'+this.value;" style="height: 29px;">
     <option value="english" <?php if($this->session->userdata('site_lang') == 'english') echo 'selected="selected"'; ?>>English</option>
     <option value="persian" <?php if($this->session->userdata('site_lang') == 'persian') echo 'selected="selected"'; ?>>فارسی</option>
     </select>

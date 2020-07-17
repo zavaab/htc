@@ -18,7 +18,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #3B5998;">
         <span>
 
-        <select class="form-control" onchange="javascript:window.location.href='<?php echo base_url(); ?>multilanguageswitcher/switch/'+this.value;">
+        <select class="form-control" onchange="javascript:window.location.href='<?php echo base_url(); ?>multilanguageswitcher/_switch/'+this.value;">
             <option value="english" <?php if($this->session->userdata('site_lang') == 'english') echo 'selected="selected"'; ?>>English</option>
             <option value="persian" <?php if($this->session->userdata('site_lang') == 'persian') echo 'selected="selected"'; ?>>Persian</option>
            
