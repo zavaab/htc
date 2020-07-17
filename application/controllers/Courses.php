@@ -9,7 +9,7 @@ class Courses extends CI_Controller {
 		$this->load->model('Mstatic');
 	}
 
-	public function static($id){
+	public function static1($id){
 		$dataall=$this->Mstatic->getdata($id);
 		$menus=$this->Mstatic->mnu();
 		$body["body"]=$dataall;
