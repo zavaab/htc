@@ -76,6 +76,7 @@ class Modeladmin extends CI_Model {
 	public function getmasters(){
 		$this->db->select('*');
 		$this->db->from('tbl_masters');
+		$this->db->order_by('tbl_masters.m_id', 'DESC');
 		$query = $this->db->get();
 		return $query->result();
 	}
