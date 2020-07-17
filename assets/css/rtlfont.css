@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Shabnam';
+    src:url(../fonts/Shabnam-Bold.ttf);
+}
+@font-face {
+    font-family: 'Yekan';
+    src:url(../fonts/Shabnam-Light.ttf);
+}
+
+body{
+	font-family: Yekan !important;
+}
+.nav-menu a,a,h1, h2, h3, h4, h5, h6,.btn-get-started{
+font-family: Yekan !important;
+}
+
+.head_slider{
+font-family: Shabnam;
+}
+

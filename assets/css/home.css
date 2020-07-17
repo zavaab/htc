@@ -1,0 +1,192 @@
+/* welcome */
+.how-section1{
+    margin-top:-15%;
+    padding: 10%;
+		padding-top: 15%;
+}
+.how-section1 h4{
+    color: #ffa500;
+    font-weight: bold;
+    font-size: 30px;
+}
+.how-section1 .subheading{
+    color: #3931af;
+    font-size: 20px;
+}
+.how-section1 .row
+{
+    margin-top: 10%;
+}
+.how-img
+{
+    text-align: center;
+}
+/* .how-img img{
+    width: 40%;
+} */
+	/* welcome */
+
+/* study of  */
+#study_with{
+	background-color: #f4f5f7;
+}
+#study_with .col-md-4{
+	padding-top: 100px;
+}
+#study_with #btn_see{
+	background-color: rgb(60,90,118);
+	padding: 18px;
+}
+#study_with h3{
+	color: rgb(60,90,118);
+}
+
+/* study of  */
+#register_reg{
+margin-top: 50px;
+background:
+linear-gradient(
+  rgba(0, 0, 0, 0.5),
+  rgba(0, 0, 0, 0.5)
+), url('../img/_back_register.jpg')no-repeat center 0px;
+	background-attachment:fixed;
+	background-size: cover;
+	-webkit-backdrop-filter: blur(10px);
+}
+register_reg .container{
+	-webkit-backdrop-filter: none;
+
+}
+.agileits-timer {
+    margin: 3em 0;
+}
+.timer {
+    font-size: 4.5em;
+    display: inline-block;
+    vertical-align: top;
+    color: #fff;
+    font-family: 'Modak', cursive;
+    letter-spacing: 5px;
+    width: 90px;
+	line-height: 1em;
+}
+.text {
+    font-size: 1em;
+    color: #fff;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+.clock .column {
+    /* display: inline-block;
+    border: 1px solid #fff;
+    padding: 1.5em;
+    border-radius: 100px;
+    margin: 0 1em;
+	background: rgba(0, 0, 0, 0.33); */
+	display: inline-block;
+	border: 1px solid #fff;
+	padding: 1.5em;
+border-radius: 100px;
+margin: 0em;
+background: rgba(0, 0, 0, 0.33);
+font-size: 10px;
+}
+.days {
+    display: none;
+}
+
+.mycard-body{
+	padding: 0px;
+
+}
+.card-bodyy{
+	padding: 1.25rem;
+}
+.mycard-header{
+	background-color: gold;
+	border-radius: 0px 0px 45px 45px;
+}
+.mycard-header p{
+    padding: 11px 37px 0px 37px;
+}
+
+/* register */
+
+/* video */
+#myvideo {
+	margin-top: 50px;
+	position: relative;
+	background-color: black;
+	height: 75vh;
+	min-height: 25rem;
+	width: 100%;
+	overflow: hidden;
+  }
+
+  #myvideo video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: 0;
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+  }
+
+  #myvideo .container {
+	position: relative;
+	z-index: 2;
+  }
+
+  #myvideo .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0.5;
+	z-index: 1;
+  }
+
+  @media (pointer: coarse) and (hover: none) {
+	#myvideo {
+	  background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+	}
+	#myvideo video {
+	  display: none;
+	}
+  }
+
+  .my-auto{
+	padding-top: 350px;
+  }
+
+/*end video */
+
+/*  slider bottom */
+.sec_margin{
+	margin-top: 50px;
+}
+/*  slider */
+.fa-quote-right , .fa-quote-left{
+color:#06475a;
+}
+.how-img img{
+	padding: 15px 0px 15px 0px;
+}
+
+.d-block {
+width: 100%;
+height: 600px;
+max-height: 600px;
+height: 480px;
+max-height: 480px;
+}
+

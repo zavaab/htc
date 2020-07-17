@@ -1,0 +1,823 @@
+/* CSS crunched with Crunch - http://crunchapp.net/ */
+/**
+ * File: styles.css
+ * Description : Contains all necessary styling for the BWL News Ticker 
+ * Author: xenioushk
+ * Credits: http://www.bluewindlab.net
+ * Project: BWL News Ticker
+ **/
+/*========================================================================*/
+/*   TABLE OF CONTENT
+/*========================================================================*/
+/*
+/*      01. TICKER COMMON STYLING
+/*      02. TICKER WITH STICKY HEADER
+/*      03. TICKER WITH STICKY FOOTER
+/*      04. INLINE TICKER
+/*      05. TICKER CONTROL BUTTON STYLING
+/*      06. RTL STYLING
+/*      07. THEME STYLING
+/*      08. RESPONSIVE STYLING
+/*
+/*========================================================================*/
+/***********************************************************************************************/
+/* 01. TICKER COMMON STYLING */
+/***********************************************************************************************/
+.bwl_header_ticker_wrapper div.bnt_nothing_found,
+.bwl_footer_ticker_wrapper div.bnt_nothing_found,
+.bwl_inline_ticker_wrapper div.bnt_nothing_found {
+  text-align: left;
+  line-height: 48px;
+  padding: 0 0 0 12px;
+}
+.bwl_news_ticker,
+.bnt_dn,
+.bjnt_dn,
+div.bnm_dn,
+span.bnm_dn {
+  display: none;
+}
+.no-border {
+  border-bottom: none !important;
+}
+/***********************************************************************************************/
+/* 02. TICKER WITH STICKY HEADER */
+/***********************************************************************************************/
+.bwl_header_ticker_wrapper {
+  
+  background: #ffffff;
+  color: #262626;
+  border-bottom: 3px solid #2c2c2c;
+  width: 100%;
+  height: 48px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.bwl_header_ticker_wrapper .bwl_header_ticker_content {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 32px;
+  clear: both;
+}
+.bwl_header_ticker_wrapper .bwl_header_ticker_content span.ticker_title {
+  
+  display: block;
+  float: left;
+  font-size: 18px;
+  font-weight: bold;
+  height: 48px;
+  padding: 0 15px;
+  line-height: 48px;
+  margin: 0 11px 0 0px;
+  background: #2c2c2c;
+  color: #ffffff;
+  min-width: 120px;
+  position: relative;
+}
+.bwl_header_ticker_wrapper .bwl_header_ticker_content span.ticker_title:after {
+  /*content: '';
+                position: absolute;
+                display: inline-block;
+                height: 48px;
+                width: 48px;
+                top: 0;
+                left: -50px;
+                background: #FFFFFF;
+                transform: rotate(45deg);*/
+}
+.bwl_header_ticker_wrapper .bwl_header_ticker_content .bwl_news_lists {
+  list-style: none outside none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  height: 250px;
+  text-align: left;
+}
+.bwl_header_ticker_wrapper .bwl_header_ticker_content .bwl_news_lists li {
+  height: 250px;
+  background: transparent;
+  list-style-type: none;
+  margin: 0;
+  line-height: 48px;
+  padding: 0 0 0 5px;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  width: 90%;
+}
+.bwl_header_ticker_wrapper .bwl_header_ticker_content .bwl_news_lists li a {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  color: #262626;
+  text-decoration: none;
+  -webkit-transition: 0.3s 0.2s ease-out;
+  -moz-transition: 0.3s 0.2s ease-out;
+  -o-transition: 0.3s 0.2s ease-out;
+  transition: 0.3s 0.2s ease-out;
+}
+.bwl_header_ticker_wrapper .bwl_header_ticker_content .bwl_news_lists li a:hover {
+  color: #000000;
+}
+/***********************************************************************************************/
+/* 03. TICKER WITH STICKY FOOTER  */
+/***********************************************************************************************/
+.bwl_footer_ticker_wrapper {
+  
+  background: #ffffff;
+  color: #262626;
+  border-top: 3px solid #2c2c2c;
+  width: 100%;
+  height: 48px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  overflow: hidden;
+}
+.bwl_footer_ticker_wrapper .bwl_footer_ticker_content {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 32px;
+  clear: both;
+}
+.bwl_footer_ticker_wrapper .bwl_footer_ticker_content span.ticker_title {
+  
+  display: block;
+  float: left;
+  font-size: 18px;
+  font-weight: bold;
+  height: 48px;
+  padding: 0 15px;
+  line-height: 48px;
+  margin: 0 11px 0 0px;
+  background: #2c2c2c;
+  color: #ffffff;
+  min-width: 120px;
+  position: relative;
+}
+.bwl_footer_ticker_wrapper .bwl_footer_ticker_content span.ticker_title:after {
+  /*content: '';
+                position: absolute;
+                display: inline-block;
+                height: 48px;
+                width: 48px;
+                top: 0;
+                left: -50px;
+                background: #FFFFFF;
+                transform: rotate(45deg);*/
+}
+.bwl_footer_ticker_wrapper .bwl_footer_ticker_content .bwl_news_lists {
+  list-style: none outside none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  height: 250px;
+  text-align: left;
+}
+.bwl_footer_ticker_wrapper .bwl_footer_ticker_content .bwl_news_lists li {
+  height: 250px;
+  background: transparent;
+  list-style-type: none;
+  margin: 0;
+  line-height: 48px;
+  padding: 0 0 0 5px;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  width: 90%;
+}
+.bwl_footer_ticker_wrapper .bwl_footer_ticker_content .bwl_news_lists li a {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  color: #262626;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  -webkit-transition: 0.3s 0.2s ease-out;
+  -moz-transition: 0.3s 0.2s ease-out;
+  -o-transition: 0.3s 0.2s ease-out;
+  transition: 0.3s 0.2s ease-out;
+}
+.bwl_footer_ticker_wrapper .bwl_footer_ticker_content .bwl_news_lists li a:hover {
+  color: #000000;
+}
+/***********************************************************************************************/
+/* 04. INLINE TICKER */
+/***********************************************************************************************/
+.bwl_inline_ticker_wrapper {
+  
+  background: #ffffff;
+  color: #262626;
+  border: 1px solid #2c2c2c;
+  border-left: 0px solid transparent;
+  width: 100%;
+  height: 48px;
+  z-index: 2000;
+  overflow: hidden;
+}
+.bwl_inline_ticker_wrapper .bwl_inline_ticker_content {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 32px;
+  clear: both;
+  position: relative;
+}
+.bwl_inline_ticker_wrapper .bwl_inline_ticker_content span.ticker_title {
+  
+  display: block;
+  float: left;
+  font-size: 18px;
+  font-weight: bold;
+  height: 48px;
+  padding: 0 20px;
+  line-height: 48px;
+  margin: 0 11px 0 0px;
+  background: #2c2c2c;
+  color: #ffffff;
+  min-width: 120px;
+  position: relative;
+}
+.bwl_inline_ticker_wrapper .bwl_inline_ticker_content span.ticker_title:after {
+  /*content: '';
+                position: absolute;
+                display: inline-block;
+                height: 48px;
+                width: 48px;
+                top: 0;
+                left: -50px;
+                background: #FFFFFF;
+                transform: rotate(45deg);*/
+}
+.bwl_inline_ticker_wrapper .bwl_inline_ticker_content .bwl_news_lists {
+  list-style: none outside none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  height: 250px;
+  text-align: left;
+}
+.bwl_inline_ticker_wrapper .bwl_inline_ticker_content .bwl_news_lists li {
+  height: 250px;
+  background: transparent;
+  list-style-type: none;
+  margin: 0;
+  line-height: 48px;
+  padding: 0 0 0 5px;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  width: 90%;
+}
+.bwl_inline_ticker_wrapper .bwl_inline_ticker_content .bwl_news_lists li a {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  color: #262626;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  -webkit-transition: 0.3s 0.2s ease-out;
+  -moz-transition: 0.3s 0.2s ease-out;
+  -o-transition: 0.3s 0.2s ease-out;
+  transition: 0.3s 0.2s ease-out;
+}
+.bwl_inline_ticker_wrapper .bwl_inline_ticker_content .bwl_news_lists li a:hover {
+  color: #000000;
+}
+/***********************************************************************************************/
+/* 05. TICKER CONTROL BUTTON STYLING */
+/***********************************************************************************************/
+div.ticker_header_toggle_wrapper {
+  clear: both;
+  position: fixed;
+  top: 48px;
+  font-weight: normal;
+  font-size: 12px;
+}
+div.ticker_header_toggle_wrapper .bwl_header_toggle_btn {
+  text-align: center;
+  width: 24px;
+  height: 24px;
+  padding: 5px;
+  cursor: pointer;
+  display: inline-block;
+  z-index: 2001;
+  line-height: 24px;
+  background: #2c2c2c;
+  color: #ffffff;
+  border: 1px solid #2c2c2c;
+  border-bottom: 0px solid #2c2c2c;
+  -webkit-border-radius: 0px 0px 3px 3px;
+  -moz-border-radius: 0px 0px 3px 3px;
+  border-radius: 0px 0px 3px 3px;
+}
+div.ticker_header_toggle_wrapper .bwl_header_toggle_btn i.fa {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+div.ticker_header_toggle_wrapper .bwl_header_toggle_btn:hover i.fa {
+  -webkit-transform: rotateY(360deg);
+  -moz-transform: rotateY(360deg);
+  -ms-transform: rotateY(360deg);
+  -o-transform: rotateY(360deg);
+  transform: rotateY(360deg);
+}
+div.ticker_footer_toggle_wrapper {
+  clear: both;
+  position: fixed;
+  right: 21px;
+  bottom: 48px;
+  font-weight: normal;
+  font-size: 12px;
+}
+div.ticker_footer_toggle_wrapper .bwl_footer_toggle_btn {
+  text-align: center;
+  width: 24px;
+  height: 24px;
+  padding: 5px;
+  cursor: pointer;
+  display: inline-block;
+  z-index: 2001;
+  line-height: 24px;
+  background: #2c2c2c;
+  color: #ffffff;
+  border: 1px solid #2c2c2c;
+  border-bottom: 0px solid #2c2c2c;
+  -webkit-border-radius: 3px 3px 0px 0px;
+  -moz-border-radius: 3px 3px 0px 0px;
+  border-radius: 3px 3px 0px 0px;
+}
+div.ticker_footer_toggle_wrapper .bwl_footer_toggle_btn i.fa {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+div.ticker_footer_toggle_wrapper .bwl_footer_toggle_btn:hover i.fa {
+  -webkit-transform: rotateY(360deg);
+  -moz-transform: rotateY(360deg);
+  -ms-transform: rotateY(360deg);
+  -o-transform: rotateY(360deg);
+  transform: rotateY(360deg);
+}
+div.ticker_btn_wrapper {
+  clear: both;
+  position: absolute;
+  top: 7px;
+  opacity: 0;
+  -webkit-transition: 0.3s 0.2s ease-out;
+  -moz-transition: 0.3s 0.2s ease-out;
+  -o-transition: 0.3s 0.2s ease-out;
+  transition: 0.3s 0.2s ease-out;
+  font-weight: normal;
+  font-size: 12px;
+}
+div.ticker_btn_wrapper .bwl_prev_btn {
+  width: 24px;
+  padding: 0 5px;
+  cursor: pointer;
+  display: inline-block;
+  background: #2c2c2c;
+  color: #ffffff;
+  border: 1px solid #2c2c2c;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  z-index: 2001;
+  opacity: 0.7;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  margin-right: 5px;
+}
+div.ticker_btn_wrapper .bwl_prev_btn i.fa {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  -ms-transform: rotateX(0deg);
+  -o-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+div.ticker_btn_wrapper .bwl_prev_btn:hover {
+  opacity: 1;
+}
+div.ticker_btn_wrapper .bwl_prev_btn:hover i.fa {
+  -webkit-transform: rotateX(360deg);
+  -moz-transform: rotateX(360deg);
+  -ms-transform: rotateX(360deg);
+  -o-transform: rotateX(360deg);
+  transform: rotateX(360deg);
+}
+div.ticker_btn_wrapper .bwl_next_btn {
+  width: 24px;
+  padding: 0 5px;
+  cursor: pointer;
+  display: inline-block;
+  background: #2c2c2c;
+  color: #ffffff;
+  border: 1px solid #2c2c2c;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  z-index: 2001;
+  opacity: 0.7;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+div.ticker_btn_wrapper .bwl_next_btn i.fa {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  -ms-transform: rotateX(0deg);
+  -o-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+div.ticker_btn_wrapper .bwl_next_btn:hover {
+  opacity: 1;
+}
+div.ticker_btn_wrapper .bwl_next_btn:hover i.fa {
+  -webkit-transform: rotateX(360deg);
+  -moz-transform: rotateX(360deg);
+  -ms-transform: rotateX(360deg);
+  -o-transform: rotateX(360deg);
+  transform: rotateX(360deg);
+}
+span.bnt-triangle-right {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 0 12px 14px;
+  border-color: transparent transparent transparent #FFFFFF;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+span.bnt-circle-right {
+  display: inline-block;
+  height: 24px;
+  width: 12px;
+  border-radius: 0 90px 90px 0;
+  -moz-border-radius: 0 90px 90px 0;
+  -webkit-border-radius: 0 90px 90px 0;
+  background: #FFFFFF;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/***********************************************************************************************/
+/* 06. RTL STYLING */
+/***********************************************************************************************/
+.bnt-fr {
+  float: right;
+}
+/***********************************************************************************************/
+/* 07. THEME STYLING */
+/***********************************************************************************************/
+div.red_bwl_header_ticker_wrapper,
+div.red_bwl_inline_ticker_wrapper,
+div.red_bwl_footer_ticker_wrapper {
+  border-color: #ff3030 !important;
+}
+div.red_bwl_header_ticker_wrapper span.red_ticker_title,
+div.red_bwl_inline_ticker_wrapper span.red_ticker_title,
+div.red_bwl_footer_ticker_wrapper span.red_ticker_title {
+  background: #ff3030 !important;
+}
+div.red_bwl_header_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.red_bwl_inline_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.red_bwl_footer_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.red_bwl_header_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn,
+div.red_bwl_inline_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn,
+div.red_bwl_footer_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn {
+  background: #ff3030 !important;
+  border-color: #ff3030 !important;
+}
+div.red_ticker_header_toggle_wrapper .bwl_header_toggle_btn,
+div.red_ticker_footer_toggle_wrapper .bwl_header_toggle_btn,
+div.red_ticker_header_toggle_wrapper .bwl_footer_toggle_btn,
+div.red_ticker_footer_toggle_wrapper .bwl_footer_toggle_btn {
+  background: #ff3030 !important;
+  border-color: #ff3030 !important;
+}
+div.green_bwl_header_ticker_wrapper,
+div.green_bwl_inline_ticker_wrapper,
+div.green_bwl_footer_ticker_wrapper {
+  border-color: #008b45 !important;
+}
+div.green_bwl_header_ticker_wrapper span.green_ticker_title,
+div.green_bwl_inline_ticker_wrapper span.green_ticker_title,
+div.green_bwl_footer_ticker_wrapper span.green_ticker_title {
+  background: #008b45 !important;
+}
+div.green_bwl_header_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.green_bwl_inline_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.green_bwl_footer_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.green_bwl_header_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn,
+div.green_bwl_inline_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn,
+div.green_bwl_footer_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn {
+  background: #008b45 !important;
+  border-color: #008b45 !important;
+}
+div.green_ticker_header_toggle_wrapper .bwl_header_toggle_btn,
+div.green_ticker_footer_toggle_wrapper .bwl_header_toggle_btn,
+div.green_ticker_header_toggle_wrapper .bwl_footer_toggle_btn,
+div.green_ticker_footer_toggle_wrapper .bwl_footer_toggle_btn {
+  background: #008b45 !important;
+  border-color: #008b45 !important;
+}
+div.blue_bwl_header_ticker_wrapper,
+div.blue_bwl_inline_ticker_wrapper,
+div.blue_bwl_footer_ticker_wrapper {
+  border-color: #0000ee !important;
+}
+div.blue_bwl_header_ticker_wrapper span.blue_ticker_title,
+div.blue_bwl_inline_ticker_wrapper span.blue_ticker_title,
+div.blue_bwl_footer_ticker_wrapper span.blue_ticker_title {
+  background: #0000ee !important;
+}
+div.blue_bwl_header_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.blue_bwl_inline_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.blue_bwl_footer_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.blue_bwl_header_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn,
+div.blue_bwl_inline_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn,
+div.blue_bwl_footer_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn {
+  background: #0000ee !important;
+  border-color: #0000ee !important;
+}
+div.blue_ticker_header_toggle_wrapper .bwl_header_toggle_btn,
+div.blue_ticker_footer_toggle_wrapper .bwl_header_toggle_btn,
+div.blue_ticker_header_toggle_wrapper .bwl_footer_toggle_btn,
+div.blue_ticker_footer_toggle_wrapper .bwl_footer_toggle_btn {
+  background: #0000ee !important;
+  border-color: #0000ee !important;
+}
+div.orange_bwl_header_ticker_wrapper,
+div.orange_bwl_inline_ticker_wrapper,
+div.orange_bwl_footer_ticker_wrapper {
+  border-color: #ff8000 !important;
+}
+div.orange_bwl_header_ticker_wrapper span.orange_ticker_title,
+div.orange_bwl_inline_ticker_wrapper span.orange_ticker_title,
+div.orange_bwl_footer_ticker_wrapper span.orange_ticker_title {
+  background: #ff8000 !important;
+}
+div.orange_bwl_header_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.orange_bwl_inline_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.orange_bwl_footer_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.orange_bwl_header_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn,
+div.orange_bwl_inline_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn,
+div.orange_bwl_footer_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn {
+  background: #ff8000 !important;
+  border-color: #ff8000 !important;
+}
+div.orange_ticker_header_toggle_wrapper .bwl_header_toggle_btn,
+div.orange_ticker_footer_toggle_wrapper .bwl_header_toggle_btn,
+div.orange_ticker_header_toggle_wrapper .bwl_footer_toggle_btn,
+div.orange_ticker_footer_toggle_wrapper .bwl_footer_toggle_btn {
+  background: #ff8000 !important;
+  border-color: #ff8000 !important;
+}
+div.pink_bwl_header_ticker_wrapper,
+div.pink_bwl_inline_ticker_wrapper,
+div.pink_bwl_footer_ticker_wrapper {
+  border-color: #ff69b4 !important;
+}
+div.pink_bwl_header_ticker_wrapper span.pink_ticker_title,
+div.pink_bwl_inline_ticker_wrapper span.pink_ticker_title,
+div.pink_bwl_footer_ticker_wrapper span.pink_ticker_title {
+  background: #ff69b4 !important;
+}
+div.pink_bwl_header_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.pink_bwl_inline_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.pink_bwl_footer_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.pink_bwl_header_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn,
+div.pink_bwl_inline_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn,
+div.pink_bwl_footer_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn {
+  background: #ff69b4 !important;
+  border-color: #ff69b4 !important;
+}
+div.pink_ticker_header_toggle_wrapper .bwl_header_toggle_btn,
+div.pink_ticker_footer_toggle_wrapper .bwl_header_toggle_btn,
+div.pink_ticker_header_toggle_wrapper .bwl_footer_toggle_btn,
+div.pink_ticker_footer_toggle_wrapper .bwl_footer_toggle_btn {
+  background: #ff69b4 !important;
+  border-color: #ff69b4 !important;
+}
+div.purple_bwl_header_ticker_wrapper,
+div.purple_bwl_inline_ticker_wrapper,
+div.purple_bwl_footer_ticker_wrapper {
+  border-color: #9b30ff !important;
+}
+div.purple_bwl_header_ticker_wrapper span.purple_ticker_title,
+div.purple_bwl_inline_ticker_wrapper span.purple_ticker_title,
+div.purple_bwl_footer_ticker_wrapper span.purple_ticker_title {
+  background: #9b30ff !important;
+}
+div.purple_bwl_header_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.purple_bwl_inline_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.purple_bwl_footer_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.purple_bwl_header_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn,
+div.purple_bwl_inline_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn,
+div.purple_bwl_footer_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn {
+  background: #9b30ff !important;
+  border-color: #9b30ff !important;
+}
+div.purple_ticker_header_toggle_wrapper .bwl_header_toggle_btn,
+div.purple_ticker_footer_toggle_wrapper .bwl_header_toggle_btn,
+div.purple_ticker_header_toggle_wrapper .bwl_footer_toggle_btn,
+div.purple_ticker_footer_toggle_wrapper .bwl_footer_toggle_btn {
+  background: #9b30ff !important;
+  border-color: #9b30ff !important;
+}
+div.olive_bwl_header_ticker_wrapper,
+div.olive_bwl_inline_ticker_wrapper,
+div.olive_bwl_footer_ticker_wrapper {
+  border-color: #698b22 !important;
+}
+div.olive_bwl_header_ticker_wrapper span.olive_ticker_title,
+div.olive_bwl_inline_ticker_wrapper span.olive_ticker_title,
+div.olive_bwl_footer_ticker_wrapper span.olive_ticker_title {
+  background: #698b22 !important;
+}
+div.olive_bwl_header_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.olive_bwl_inline_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.olive_bwl_footer_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.olive_bwl_header_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn,
+div.olive_bwl_inline_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn,
+div.olive_bwl_footer_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn {
+  background: #698b22 !important;
+  border-color: #698b22 !important;
+}
+div.olive_ticker_header_toggle_wrapper .bwl_header_toggle_btn,
+div.olive_ticker_footer_toggle_wrapper .bwl_header_toggle_btn,
+div.olive_ticker_header_toggle_wrapper .bwl_footer_toggle_btn,
+div.olive_ticker_footer_toggle_wrapper .bwl_footer_toggle_btn {
+  background: #698b22 !important;
+  border-color: #698b22 !important;
+}
+div.yellow_bwl_header_ticker_wrapper,
+div.yellow_bwl_inline_ticker_wrapper,
+div.yellow_bwl_footer_ticker_wrapper {
+  border-color: #ffd602 !important;
+}
+div.yellow_bwl_header_ticker_wrapper span.yellow_ticker_title,
+div.yellow_bwl_inline_ticker_wrapper span.yellow_ticker_title,
+div.yellow_bwl_footer_ticker_wrapper span.yellow_ticker_title {
+  background: #ffd602 !important;
+}
+div.yellow_bwl_header_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.yellow_bwl_inline_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.yellow_bwl_footer_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.yellow_bwl_header_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn,
+div.yellow_bwl_inline_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn,
+div.yellow_bwl_footer_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn {
+  background: #ffd602 !important;
+  border-color: #ffd602 !important;
+}
+div.yellow_ticker_header_toggle_wrapper .bwl_header_toggle_btn,
+div.yellow_ticker_footer_toggle_wrapper .bwl_header_toggle_btn,
+div.yellow_ticker_header_toggle_wrapper .bwl_footer_toggle_btn,
+div.yellow_ticker_footer_toggle_wrapper .bwl_footer_toggle_btn {
+  background: #ffd602 !important;
+  border-color: #ffd602 !important;
+}
+div.gray_bwl_header_ticker_wrapper,
+div.gray_bwl_inline_ticker_wrapper,
+div.gray_bwl_footer_ticker_wrapper {
+  border-color: #8b8878 !important;
+}
+div.gray_bwl_header_ticker_wrapper span.gray_ticker_title,
+div.gray_bwl_inline_ticker_wrapper span.gray_ticker_title,
+div.gray_bwl_footer_ticker_wrapper span.gray_ticker_title {
+  background: #8b8878 !important;
+}
+div.gray_bwl_header_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.gray_bwl_inline_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.gray_bwl_footer_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.gray_bwl_header_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn,
+div.gray_bwl_inline_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn,
+div.gray_bwl_footer_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn {
+  background: #8b8878 !important;
+  border-color: #8b8878 !important;
+}
+div.gray_ticker_header_toggle_wrapper .bwl_header_toggle_btn,
+div.gray_ticker_footer_toggle_wrapper .bwl_header_toggle_btn,
+div.gray_ticker_header_toggle_wrapper .bwl_footer_toggle_btn,
+div.gray_ticker_footer_toggle_wrapper .bwl_footer_toggle_btn {
+  background: #8b8878 !important;
+  border-color: #8b8878 !important;
+}
+div.chocolate_bwl_header_ticker_wrapper,
+div.chocolate_bwl_inline_ticker_wrapper,
+div.chocolate_bwl_footer_ticker_wrapper {
+  border-color: #8b4513 !important;
+}
+div.chocolate_bwl_header_ticker_wrapper span.chocolate_ticker_title,
+div.chocolate_bwl_inline_ticker_wrapper span.chocolate_ticker_title,
+div.chocolate_bwl_footer_ticker_wrapper span.chocolate_ticker_title {
+  background: #8b4513 !important;
+}
+div.chocolate_bwl_header_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.chocolate_bwl_inline_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.chocolate_bwl_footer_ticker_wrapper div.ticker_btn_wrapper .bwl_prev_btn,
+div.chocolate_bwl_header_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn,
+div.chocolate_bwl_inline_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn,
+div.chocolate_bwl_footer_ticker_wrapper div.ticker_btn_wrapper .bwl_next_btn {
+  background: #8b4513 !important;
+  border-color: #8b4513 !important;
+}
+div.chocolate_ticker_header_toggle_wrapper .bwl_header_toggle_btn,
+div.chocolate_ticker_footer_toggle_wrapper .bwl_header_toggle_btn,
+div.chocolate_ticker_header_toggle_wrapper .bwl_footer_toggle_btn,
+div.chocolate_ticker_footer_toggle_wrapper .bwl_footer_toggle_btn {
+  background: #8b4513 !important;
+  border-color: #8b4513 !important;
+}
+/***********************************************************************************************/
+/* 08. MISC STYLING */
+/***********************************************************************************************/
+.bwl_header_ticker_wrapper:hover div.ticker_btn_wrapper,
+.bwl_footer_ticker_wrapper:hover div.ticker_btn_wrapper,
+.bwl_inline_ticker_wrapper:hover div.ticker_btn_wrapper {
+  opacity: 1;
+}
+/***********************************************************************************************/
+/* 07. RESPONSIVE STYLING */
+/***********************************************************************************************/
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .bwl_header_ticker_wrapper .bwl_header_ticker_content span.ticker_title,
+  .bwl_footer_ticker_wrapper .bwl_footer_ticker_content span.ticker_title,
+  .bwl_inline_ticker_wrapper .bwl_inline_ticker_content span.ticker_title {
+    display: none;
+  }
+  .bwl_header_ticker_wrapper .bwl_header_ticker_content ul.bwl_news_lists,
+  .bwl_footer_ticker_wrapper .bwl_footer_ticker_content ul.bwl_news_lists,
+  .bwl_inline_ticker_wrapper .bwl_inline_ticker_content ul.bwl_news_lists {
+    padding-left: 3px;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .bwl_header_ticker_wrapper .bwl_header_ticker_content span.ticker_title,
+  .bwl_footer_ticker_wrapper .bwl_footer_ticker_content span.ticker_title,
+  .bwl_inline_ticker_wrapper .bwl_inline_ticker_content span.ticker_title {
+    display: none;
+  }
+  .bwl_header_ticker_wrapper .bwl_header_ticker_content ul.bwl_news_lists,
+  .bwl_footer_ticker_wrapper .bwl_footer_ticker_content ul.bwl_news_lists,
+  .bwl_inline_ticker_wrapper .bwl_inline_ticker_content ul.bwl_news_lists {
+    padding-left: 1px;
+  }
+}
