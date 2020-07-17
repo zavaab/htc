@@ -23,7 +23,7 @@
             parent::__construct();     
         }
         // create language Switcher method
-        function _switch($language = "") {        
+        function Lswitch($language = "") {        
             $language = ($language != "") ? $language : "persian";
             $this->session->set_userdata('site_lang', $language);        
             redirect($_SERVER['HTTP_REFERER']);        
