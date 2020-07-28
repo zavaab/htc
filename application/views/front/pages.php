@@ -3,28 +3,70 @@
 // include ('navbar.php');
 ?>
 <style>
-.btn-outline-dark{
-   border-color: #bdbdbd;
+.tree {
+    min-height:20px;
+    padding:19px;
+    margin-bottom:20px;
+    background-color:#fbfbfb;
+    border:1px solid #999;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.05)
 }
-.card-img-top{
-   max-height: 133px !important;
-   min-height: 133px !important;
+.tree li {
+    list-style-type:none;
+    margin:0;
+    padding:10px 5px 0 5px;
+    position:relative
 }
-.card-title{
-   max-height:80px;
-   min-height:80px;
+.tree li::before, .tree li::after {
+    content:'';
+    right:-20px;
+    position:absolute;
+    left:auto
 }
-.br_top{
-   border-top: 1px solid #e8e8e8;
-    padding-top: 5px;
+.tree li::before {
+    border-right:1px solid #999;
+    bottom:50px;
+    height:100%;
+    top:0;
+    width:1px
 }
-.shadow-lg{box-shadow:0 1rem 3rem rgba(0,0,0,.175)!important}
-.card-text{
-font-size:13px;
+.tree li::after {
+    border-top:1px solid #999;
+    height:20px;
+    top:25px;
+    width:25px
 }
-.card-body{
-   border-bottom: 3px solid #ff7878;
+.tree li span {
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border:1px solid #999;
+    border-radius:5px;
+    display:inline-block;
+    padding:3px 8px;
+    text-decoration:none
 }
+.tree li.parent_li>span {
+    cursor:pointer
+}
+.tree>ul>li::before, .tree>ul>li::after {
+    border:0
+}
+.tree li:last-child::before {
+    height:30px
+}
+.tree li.parent_li>span:hover, .tree li.parent_li>span:hover+ul li span {
+    background:#eee;
+    border:1px solid #94a0b4;
+    color:#000
+}
+
+
+
 </style>
 <body>
 
@@ -34,80 +76,130 @@ font-size:13px;
   <h3 class="pb-3 mb-4 border-bottom"> </h3>
 
 
-         <?php
-         if($this->session->userdata('site_lang') == 'persian') {
-            $d_text=$d_text_fa;
-         }else{
-            $d_text=$d_text_en;
-         }
-         
-         
-
-         $i=0;
-      foreach ($data as $dat) {
-         $i++;
-            $break=" ";
-            $d_title="";
-
-            if($this->session->userdata('site_lang') == 'persian') {
-               if(strlen($dat->d_title_fa) <= 50){$d_title=$dat->d_title_fa;}
-               else{
-                  $d_title=substr($dat->d_title_fa,0,50);
-                  $d_title=$d_title_fa."...";
-               }
-               $d_text=$dat->d_text_fa;
-            }else{
-               if(strlen($dat->d_title_en) <= 50){$d_title=$dat->d_title_en;}
-               else{
-                  $d_title=substr($dat->d_title_en,0,50);
-                  $d_title=$d_title."...";
-               }
-               $d_text=$dat->d_title_en;
-            }
-
-            
-            ?>
-
-   
-  <?php if($i==1 || $i==5 || $i==9 ||  $i==13 || $i==17 || $i==21 || $i==25 || $i==29 ||
-  $i==33 || $i==37 || $i==41 || $i==45 || $i==49 || $i==53 || $i==57
-  ){ ?>
-   <div class="card-deck" style="margin-bottom: 25px;" >
-   <?php } ?>
 
 
 
-   <div class="card" style="max-width: 254px;">
-      <img class="card-img-top" src="<?php echo base_url(); ?>assets/img/downloads/<?=$dat->d_img?>" alt="Card image cap">
-      <div class="card-body">
-         <h5 class="card-title"><?=$d_title?></h5>
-         <p class="card-text"><?= $d_text?></p>
-         <p class="card-text"><small class="text-muted">
-         <a id="file_dpwnload" href="<?php echo base_url()?>assets/img/downloads/<?=$dat->d_file_name;?>" onclick="file_dpwnload(<?=$dat->d_id;?>)" download="<?=$dat->d_file_name;?>" class="btn btn-outline-dark  btn-sm">
-               <i class="fa fa-download" style="font-size:18px;color:red"></i> </a>
-         </small></p>
-         <!-- <div class="counting" data-count="<?=$dat->file_download;?>" id="download_count_<?=$dat->d_id;?>">0</div> -->
-
-
-
-      </div>
-   </div>
-
-  
-        
-  
-
-   <?php if($i==4 || $i==8 || $i==12 || $i==16 || $i==20 || $i==24 || $i==28 || $i==32 ||
-   $i==36 || $i==40 || $i==44 || $i==48 || $i==52
-   ){ ?>
-      </div>
-      <h3 class="pb-3 mb-4 border-bottom"> </h3>
-   <?php } ?>
-
-
-
-<?php } ?>
-  
+  <!-- <div class="tree well">
+    <ul>
+        <li>
+            <span><i class="icon-folder-open"></i> Parent</span> <a href="">Goes somewhere</a>
+            <ul>
+                <li>
+                	<span><i class="icon-minus-sign"></i> Child</span> <a href="">Goes somewhere</a>
+                    <ul>
+                        <li>
+	                        <span><i class="icon-leaf"></i> Grand Child</span> <a href="">Goes somewhere</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                	<span><i class="icon-minus-sign"></i> Child</span> <a href="">Goes somewhere</a>
+                    <ul>
+                        <li>
+	                        <span><i class="icon-leaf"></i> Grand Child</span> <a href="">Goes somewhere</a>
+                        </li>
+                        <li>
+                        	<span><i class="icon-minus-sign"></i> Grand Child</span> <a href="">Goes somewhere</a>
+                            <ul>
+                                <li>
+	                                <span><i class="icon-minus-sign"></i> Great Grand Child</span> <a href="">Goes somewhere</a>
+		                            <ul>
+		                                <li>
+			                                <span><i class="icon-leaf"></i> Great great Grand Child</span> <a href="">Goes somewhere</a>
+		                                </li>
+		                                <li>
+			                                <span><i class="icon-leaf"></i> Great great Grand Child</span> <a href="">Goes somewhere</a>
+		                                </li>
+		                             </ul>
+                                </li>
+                                <li>
+	                                <span><i class="icon-leaf"></i> Great Grand Child</span> <a href="">Goes somewhere</a>
+                                </li>
+                                <li>
+	                                <span><i class="icon-leaf"></i> Great Grand Child</span> <a href="">Goes somewhere</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+	                        <span><i class="icon-leaf"></i> Grand Child</span> <a href="">Goes somewhere</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <span><i class="icon-folder-open"></i> Parent2</span> <a href="">Goes somewhere</a>
+            <ul>
+                <li>
+                	<span><i class="icon-leaf"></i> Child</span> <a href="">Goes somewhere</a>
+		        </li>
+		    </ul>
+        </li>
+    </ul>
+</div> -->
+<div class="tree">
+    <ul>
+        <li>
+            <span><i class="icon-calendar"></i> Week 1 - July 2020</span>
+            <ul>
+                <li>
+                	<span class="badge badge-success"><i class="icon-minus-sign"></i> Monday, January 7: 8.00 hours</span>
+                    <ul>
+                        <li>
+	                        <a href=""><span><i class="icon-time"></i> 8.00</span> &ndash; Changed CSS to accomodate...</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                	<span class="badge badge-success"><i class="icon-minus-sign"></i> Tuesday, January 8: 8.00 hours</span>
+                    <ul>
+                        <li>
+	                        <span><i class="icon-time"></i> 6.00</span> &ndash; <a href="">Altered code...</a>
+                        </li>
+                        <li>
+	                        <span><i class="icon-time"></i> 2.00</span> &ndash; <a href="">Simplified our approach to...</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                	<span class="badge badge-warning"><i class="icon-minus-sign"></i> Wednesday, January 9: 6.00 hours</span>
+                    <ul>
+                        <li>
+	                        <a href=""><span><i class="icon-time"></i> 3.00</span> &ndash; Fixed bug caused by...</a>
+                        </li>
+                        <li>
+	                        <a href=""><span><i class="icon-time"></i> 3.00</span> &ndash; Comitting latest code to Git...</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                	<span class="badge badge-important"><i class="icon-minus-sign"></i> Wednesday, January 9: 4.00 hours</span>
+                    <ul>
+                        <li>
+	                        <a href=""><span><i class="icon-time"></i> 2.00</span> &ndash; Create component that...</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <span><i class="icon-calendar"></i> Week 2 - July 2020</span>
+            <ul>
+                <li>
+                	<span class="badge badge-success"><i class="icon-minus-sign"></i> Monday, January 14: 8.00 hours</span>
+                    <ul>
+                        <li>
+	                        <span><i class="icon-time"></i> 7.75</span> &ndash; <a href="">Writing documentation...</a>
+                        </li>
+                        <li>
+	                        <span><i class="icon-time"></i> 0.25</span> &ndash; <a href="">Reverting code back to...</a>
+                        </li>
+                    </ul>
+                </li>
+		    </ul>
+        </li>
+    </ul>
+</div>
 </div>
 <!-- /.container -->
 
@@ -208,8 +300,25 @@ font-size:13px;
       
       // document ready  
       });
+   </script>
 
 
+   <script>
+   
+   $(function () {
+    $('.tree li:has(ul)').addClass('parent_li').find(' > span').attr('title', 'Collapse this branch');
+    $('.tree li.parent_li > span').on('click', function (e) {
+        var children = $(this).parent('li.parent_li').find(' > ul > li');
+        if (children.is(":visible")) {
+            children.hide('fast');
+            $(this).attr('title', 'Expand this branch').find(' > i').addClass('icon-plus-sign').removeClass('icon-minus-sign');
+        } else {
+            children.show('fast');
+            $(this).attr('title', 'Collapse this branch').find(' > i').addClass('icon-minus-sign').removeClass('icon-plus-sign');
+        }
+        e.stopPropagation();
+    });
+});
 
    </script>
 </body>
