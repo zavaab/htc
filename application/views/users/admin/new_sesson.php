@@ -45,7 +45,7 @@
 
                 <div style="padding: 30px 33px 33px 33px;">
             
-                  <form class="form-horizontal" action="<?= site_url("nadmin/msession/new_session") ?>" method="post">
+                  <form class="form-horizontal" action="<?= site_url("nadmin/mysession/new_session") ?>" method="post">
 
                 <div class="row">
                     <div class="col-md-12">
