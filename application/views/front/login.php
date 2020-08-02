@@ -53,24 +53,24 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="POST" action="<?php echo base_url(); ?>/users/users/checklogin" autocomplete="off">
 
-          <img src="<?php echo base_url(); ?>/assets/img/Logo-sefid.png" alt="" style="    width: 133px;float: left;    height: 45px;">
+                   <img src="<?php echo base_url(); ?>/assets/img/Logo-sefid.png" alt="" style="    width: 133px;float: left;    height: 45px;">
 
 					<span class="login100-form-title p-b-43 font">
 						ورود به پرتال
 					</span>
 					
 					
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email">
+					<div class="wrap-input100 validate-input font" data-validate="کد ملی را وارد نمایید">
+						<input class="input100" type="text" name="national_id" autocomplete="off">
 						<span class="focus-input100"></span>
 						<span class="label-input100 font">کد ملی</span>
 					</div>
 					
 					
-					<div class="wrap-input100 validate-input font" data-validate="Password is required">
-						<input class="input100" type="password" name="pass">
+					<div class="wrap-input100 validate-input font" data-validate="کلمه عبور را وارد نمایید">
+						<input class="input100" type="password" name="password">
 						<span class="focus-input100"></span>
 						<span class="label-input100 font">کلمه عبور</span>
 					</div>

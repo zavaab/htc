@@ -7,7 +7,7 @@ class Register extends CI_Controller {
         parent::__construct();
         $this->load->helper(array('form','url','html'));
 		$this->load->model('Modeladmin');
-		// include APPPATH . 'third_party/PersianCalendar.php';
+		include APPPATH . 'third_party/PersianCalendar.php';
 		include APPPATH . 'third_party/KavenegarApi.php';
 	}
 
@@ -71,7 +71,8 @@ class Register extends CI_Controller {
 		$period=$this->input->post('period');
 		// print_r($_POST);die("ok");
 
-		$date=date("Y-m-d");
+		$date_en=date("Y-m-d");
+		$date_fa=mds_date("Y/m/d", "now" );
 
 
 
@@ -91,7 +92,8 @@ class Register extends CI_Controller {
 			"education"=>$education,
 			"depart"=>$depart,
 			"requested_course"=>$period,
-			"date"=>$date,
+			"date_en"=>$date_en,
+			"date_fa"=>$date_fa,
 			"mobile"=>$mobile,
 		);
 		$res=$this->Modeladmin->reg_users($reg_users,$national);

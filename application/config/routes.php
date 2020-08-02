@@ -55,3 +55,33 @@ $route['admin/sliders'] = "Admin/sliders";
 $route['admin/students'] = "Admin/students";
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+
+
+// my route
+$route['users']="/users/users/method_index";
+
+$route['nadmin/nprog']="/nadmin/admin/new_prog";
+$route['nadmin/list_user']="/nadmin/admin/list_user";
+
+$route['nadmin/list_progs']="/nadmin/admin/list_progs";
+
+$route['nadmin/user/info/(:any)'] = 'nadmin/admin/user_info/$1';
+
+// session
+$route['nadmin/user/new_sesson/(:any)'] = 'nadmin/admin/new_sesson/$1';
+$route['nadmin/sesson/new'] = 'nadmin/sesson/new';
+$route['nadmin/mysession/details/:session_code'] = 'nadmin/mysession/edit';
+
+
+// course
+$route['nadmin/ncourse']="/nadmin/course/new_course";
+$route['nadmin/course/edit/']="/nadmin/course/edit";
+$route['nadmin/course/delete/:course_code']="/nadmin/course/delete";
+
+
+$route['login']="/users/users/login";
+
+
+// users
+$route['users/list_progs']="/users/users/list_progs";

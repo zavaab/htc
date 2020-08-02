@@ -74,7 +74,8 @@ class Modeladmin extends CI_Model {
 
 	// *****get all getmasters****
 	public function getmasters(){
-		$this->db->select('SELECT * FROM `tbl_masters` ORDER BY m_id');
+		$this->db->select('*');
+		$this->db->from('tbl_masters');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -495,6 +496,33 @@ public function addCourse($data){
 		);
 		$this->db->where('id', $id);
 		$this->db->update('tbl_news', $data);
+	}
+
+
+
+	// reg_users
+	public function reg_users($reg_users,$national){
+
+
+		$this->db->select('*');
+		$this->db->from('tbl_users');
+		$this->db->where('natioanl_numbr',$national);
+		$query = $this->db->get();
+		$exsist= $query->num_rows();
+		if($exsist>=1){
+			return "duplicate";
+		}else{
+			$this->db->insert('tbl_users', $reg_users);
+		$num_inserts = $this->db->affected_rows();
+		if($num_inserts)
+		return "insert";
+		else
+		return "error";
+		
+		}
+
+		
+		
 	}
 
 

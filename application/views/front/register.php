@@ -752,6 +752,8 @@ form.idealforms input, form.idealforms textarea, form.idealforms select, form.id
       }
     });
 
+
+
     function run(){
       var base_url = '<?php echo base_url();?>';
       var marital = $("input:radio[name=marital]:checked").val();
@@ -813,7 +815,7 @@ form.idealforms input, form.idealforms textarea, form.idealforms select, form.id
                 },
 								cache:false,
 								 success: function(result){
-                   console.log(result);
+                  
 
 									switch (result) {
 										case 'insert':
