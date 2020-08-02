@@ -15,7 +15,7 @@ class Mysession extends CI_Controller {
 
    
 
-    public function new_session()
+    public function new()
     {
         $title_session=$this->input->post('title_session');
         $natioanl_id=$this->input->post('natioanl_id');
