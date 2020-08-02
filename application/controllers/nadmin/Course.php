@@ -75,6 +75,7 @@ class Course extends CI_Controller {
         $this->load->view('users/admin/new_course' , $data);
         $this->load->view('users/user/footer');
 
+        
     }
 
 

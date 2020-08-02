@@ -8,7 +8,6 @@ class Admin extends CI_Controller {
 		$this->load->model('elalg_courses');
         $this->load->model('elalg_users');
         $this->load->model('elalg_session');
-
 		// include APPPATH . 'third_party/PersianCalendar.php';
     }
     
