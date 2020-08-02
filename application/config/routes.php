@@ -72,7 +72,7 @@ $route['nadmin/user/info/(:any)'] = 'nadmin/admin/user_info/$1';
 $route['nadmin/user/new_sesson/(:any)'] = 'nadmin/admin/new_sesson/$1';
 $route['nadmin/sesson/new'] = 'nadmin/sesson/new';
 $route['nadmin/mysession/details/:session_code'] = 'nadmin/mysession/edit';
-$route['nadmin/msession/new_session'] = 'nadmin/mysession/new_session';
+$route['nadmin/msession/nwe_session'] = 'nadmin/mysession/nwe_session';
 
 
 // course
