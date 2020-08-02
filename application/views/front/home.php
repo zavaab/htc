@@ -71,7 +71,7 @@
                 <h2 class="head_slider"> <?= ($this->session->userdata('site_lang') == 'persian') ? $slider->s_title_fa : $slider->s_title_en ?> </h2>
                 <p class="head_slider"><?= ($this->session->userdata('site_lang') == 'persian') ? $slider->s_body_fa : $slider->s_body_en ?> </p>
                 <a href="<?= site_url("Pages/reg") ?>" target="_blank"  class="btn-get-started scrollto"><?php echo $this->lang->line('REGISTER'); ?></a>
-                <a href="<?= site_url("Pages/login") ?>" target="_blank"  class="btn-get-started scrollto"><?php echo $this->lang->line('LOGIN'); ?></a>
+                <a href="<?= site_url("login") ?>" target="_blank"  class="btn-get-started scrollto"><?php echo $this->lang->line('LOGIN'); ?></a>
               </div>
             </div>
           </div>
