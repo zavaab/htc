@@ -57,39 +57,12 @@ class Mysession extends CI_Controller {
 
     public function details($session_code)
     {
-        date_default_timezone_set("Asia/Tehran");
-        $time_now = date('G:i:s');
-        $time_now=strtotime($t)."<br/>";
-        $time_10_day=strtotime("10:00:00")."<br/>";
-        $time_22_day=strtotime("22:00:00")."<br/>";
-        $data['permit_edit']=0;
-
-            $data['session_code']=$session_code;
-
-            $usrlogin=$this->session->userdata['usrlogin'];
-            // print_r($usrlogin);die;
-            $user_type=($usrlogin['user']->user_type==0 ?  "user" : "admin" );
-
-            if($user_type=="admin"){
-                $data['permit_edit']=1;
-            }else{
-                $Session_info=$this->elalg_session->Session_info($session_code);
-                $Session_info=$Session_info[0];
-                
-                $date_en_now=date('Y-m-d');
-                
-                $session_end_date_en = date("y-m-d", strtotime($Session_info->session_end_date_en));
-                $today = date("y-m-d", strtotime($date_en_now));
-
-                if($Session_info->session_status==1){
-                    $data['permit_edit']=2;
-                    // تکمیل
-                }else if(($session_end_date_en == $today) && ($time_now <= $time_22_day ) && ($time_now>=$time_10_day) ){
-                    $data['permit_edit']=1;
-                }else{
-                    $data['permit_edit']=0;
-                }
-            }
+       
+        
+        $Session_info=$this->elalg_session->Session_info($session_code);
+        $Session_info=$Session_info[0];
+        
+        $permmit=$this->check_permit($Session_info->session_status , $Session_info->session_end_date_en);
             
             
 
@@ -104,6 +77,7 @@ class Mysession extends CI_Controller {
             $user_session_info=$this->elalg_session->Session_user_info($session_code);
             $data['session_user_info']=$user_session_info[0];
             $data['session_details']=$res;
+            $data['permit_edit']=$permmit;
             
 
             $this->load->view('users/user/header');
@@ -195,6 +169,45 @@ class Mysession extends CI_Controller {
         
     }
 
+
+
+    public function check_permit($session_status,$session_end_date_en){
+
+        date_default_timezone_set("Asia/Tehran");
+         $time_now = date('G:i:s');
+         $time_now=strtotime($time_now)."<br/>";
+         $time_10_day=strtotime("10:00:00")."<br/>";
+         $time_22_day=strtotime("22:00:00")."<br/>";
+         $permit_edit=0;
+
+
+         $usrlogin=$this->session->userdata['usrlogin'];
+         // print_r($usrlogin);die;
+         $user_type=($usrlogin['user']->user_type==0 ?  "user" : "admin" );
+
+         if($user_type=="admin"){
+             $permit_edit=1;
+         }else{
+
+             
+             $date_en_now=date('Y-m-d');
+             
+             $session_end_date_en = date("y-m-d", strtotime($session_end_date_en));
+             $today = date("y-m-d", strtotime($date_en_now));
+
+             if($session_status==1){
+                 $permit_edit=2;
+                 // تکمیل
+             }else if(($session_end_date_en == $today) && ($time_now <= $time_22_day ) && ($time_now>=$time_10_day) ){
+                 $permit_edit=1;
+             }else{
+                 $permit_edit=0;
+             }
+         }
+
+         return $permit_edit;
+
+}
 
 
     

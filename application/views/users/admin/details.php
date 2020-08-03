@@ -23,13 +23,34 @@
 
     <section class="content padding-27">
 
-    <div class="col-md-12">
+    <div class="row">
+    <div class="col-md-6">
         <div class="callout callout-info">
         <h5 class="m-0 text-dark">کاربر : <?=$session_user_info->first_name." ".$session_user_info->last_name?></h5>    
         <h5 class="m-0 text-dark">برنامه : <?=$session_user_info->session_title?></h5>
-            
+          
             </div>
+            </div>
+    <div class="col-md-6">
+        <div class="callout callout-info">
+       
+                    <?php if($permit_edit==1){
+                    echo '<h5 class="m-0 text-dark"> <span class="badge badge-success">امکان ویرایش وجود دارد</span></h5>';
+                           }else if($permit_edit==0){
+                            echo '<h5 class="m-0 text-dark"><span class="badge badge-danger"> ویرایش 10 صبح تا 22 شب در تاریخ مشخص</span></h5>';
+                          }else if($permit_edit==2){
+                            echo '<h5 class="m-0 text-dark"><span class="badge badge-success">تکمیل شده، غ ق ویرایش</span></h5>';
+                          } ?>
+                          <h5 class="m-0 text-dark">&nbsp;</h5>
+            </div>
+
+    </div>
+ 
+            
       </div>
+
+
+
 
 
     <div class="col-md-12">
@@ -37,7 +58,14 @@
               <div class="card-header p-2">
                 <ul class="nav nav-pills">
                   <li class="nav-item"><a class="nav-link active show" href="#timeline" data-toggle="tab">تاریخچه</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">جدید</a></li>
+                  
+                  
+                  <?php if($permit_edit==1){ ?>
+                    <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">جدید</a></li>
+                          <?php } ?>
+
+
+                  
                 </ul>
               </div><!-- /.card-header -->
               <div class="card-body">

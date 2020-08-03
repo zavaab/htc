@@ -72,11 +72,12 @@
                         <td><?= $list->session_end_date_fa?></td>
                         <td><?= ($list->session_status==1 ? '<span class="badge badge-success">تکمیل شده</span>' : '<span class="badge badge-warning">درحال انجام</span>' ) ?></td>
                         <td><div class="tools">
-                          <?php if($list->permit_edit==1){ ?>
                         <a href="<?= site_url("nadmin/mysession/details/").$list->session_code ?>"><i class="fa fa-edit"></i> </a>
-                          <?php }else if($list->permit_edit==0){
+                          <?php if($list->permit_edit==1){ ?>
+                        
+                          <?php }else if(1==0){
                             echo '<span class="badge badge-danger"> ویرایش 10 صبح تا 22 شب در تاریخ مشخص</span>';
-                          }else if($list->permit_edit==2){
+                          }else if(0==2){
                             echo '<span class="badge badge-success">تکمیل شده، غ ق ویرایش</span>';
                           } ?>
                       </div></td>
