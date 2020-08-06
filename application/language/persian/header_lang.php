@@ -13,5 +13,7 @@
         $lang['text_menu_ABOUT_US_header'] = 'درباره ما';
         $lang['text_menu_Contact_header'] = 'تماس با ما';
         $lang['text_menu_Gallery_header'] = 'گالری';
+        $lang['text_menu_level_header'] = 'تعیین سطح';
+        $lang['text_menu_word_header'] = 'تست لغت';
         $lang['text_TITLE_header'] = 'مرکز آموزشی حدادیان';
       ?>

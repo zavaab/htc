@@ -15,5 +15,7 @@
         $lang['text_menu_ABOUT_US_header'] = 'ABOUT US';
         $lang['text_menu_Contact_header'] = 'Contact';
         $lang['text_menu_Gallery_header'] = 'Gallery';
+        $lang['text_menu_level_header'] = 'level determination';
         $lang['text_TITLE_header'] = 'HTCHADDADIAN LANGUAGE ACADEMY';
+        
       ?>
