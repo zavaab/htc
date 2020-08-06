@@ -21,7 +21,14 @@
           $ci =& get_instance();
           // load language helper
           $ci->load->helper('language');
+          
           $siteLang = $ci->session->userdata('site_lang');
+          if($siteLang){
+            $siteLang = $ci->session->userdata('site_lang');
+          }else{
+            $ci->session->set_userdata('site_lang', 'persian');
+            $siteLang = $ci->session->userdata('site_lang');
+          }
           if ($siteLang) {
               // difine all language files
               $ci->lang->load('header',$siteLang);
