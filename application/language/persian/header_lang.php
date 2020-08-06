@@ -13,5 +13,5 @@
         $lang['text_menu_ABOUT_US_header'] = 'درباره ما';
         $lang['text_menu_Contact_header'] = 'تماس با ما';
         $lang['text_menu_Gallery_header'] = 'گالری';
-        $lang['text_TITLE_header'] = 'آکادمی زبان انگلیسی HTCHADDADIAN';
+        $lang['text_TITLE_header'] = 'مرکز آموزشی حدادیان';
       ?>
