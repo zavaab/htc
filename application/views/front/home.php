@@ -206,7 +206,7 @@ $i++;
 														<a class="btn btn-info btn-md" id="btn_see" href="<?php echo base_url(); ?>/Courses/listcourse"><?php echo $this->lang->line('SEE_LIST_OF_COURSES'); ?></a>
 												</div>
 												<div class="col-md-8 how-img">
-                            <img src="<?php echo base_url(); ?>assets/img/study_with.jpg " class="img-fluid" alt=""/>
+                            <img src="<?php echo base_url(); ?>assets/img/study_with1.jpg " class="img-fluid" alt=""/>
                         </div>
 						</div>
       </div>
