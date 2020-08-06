@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="<?php echo base_url(); ?>assets/img/favicon.png" rel="icon">
+  <link href="<?php echo base_url(); ?>assets/img/favicon1.png" rel="icon">
   <link href="<?php echo base_url(); ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
