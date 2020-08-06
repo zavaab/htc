@@ -38,7 +38,7 @@
 
 
 
-    $lang['INSTRAUCTOR'] = 'علاقه مند هستید مربی شوید؟'; 
+    $lang['INSTRAUCTOR'] = 'دوست داریم هم تیمی ما باشید'; 
     $lang['UPLOAD_RESUME'] = 'بارگزاری رزومه'; 
     $lang['SELECT_FILE'] = 'انتخاب فایل';
     $lang['NAME'] = 'نام و نام خانوادگی';
