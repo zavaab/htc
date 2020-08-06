@@ -312,7 +312,7 @@ a:focus, a:hover {
 							</div>
 
 							<div class="footer text-right">
-								<a class="btn btn-success" href="">Haddadian_toefl@yahoo.com</a>
+								<a class="btn btn-success" href="">info@haddadiantc.com</a>
 							</div>
 
 						</div>
