@@ -302,7 +302,7 @@ $i++;
 
                   <div class="form-group">
                   
-                  <textarea class="form-control" rows="3" id="comment" placeholder="چطور می توانیم به شما کمک کنیم؟"></textarea>
+                  <textarea class="form-control" rows="3" id="comment" placeholder="چطور میتونیم به شما کمک کنیم؟"></textarea>
                 </div>
 
 
