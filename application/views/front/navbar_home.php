@@ -93,7 +93,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <!-- Main Stylesheet File -->
 <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
 <link href="<?php echo base_url(); ?>assets/css/pages.css" rel="stylesheet">
-<link href="<?php echo base_url(); ?>assets/css/home.css?v=1.0" rel="stylesheet">
+<link href="<?php echo base_url(); ?>assets/css/home.css?v=2.0" rel="stylesheet">
 <?php if($this->session->userdata('site_lang') == 'persian') {
    ?>
    <link href="<?php echo base_url(); ?>assets/css/rtlfont.css" rel="stylesheet">
