@@ -110,6 +110,7 @@ a:focus, a:hover {
   height: 64px;
   width: 64px;
   font-size: 250%;
+  color: #187a96;
 }
 .circle-container i {
   display: block;
@@ -160,7 +161,7 @@ a:focus, a:hover {
   line-break: auto;
 }
 .service-item .header {
-  background: #345342;
+  background: #187a96;
   padding: 10px 20px;
   border-radius: 4px 4px 0 0;
 }
