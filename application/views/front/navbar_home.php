@@ -176,7 +176,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <li ><a href="<?php echo site_url("Pages/about_us")?> "> <?php echo $this->lang->line('text_menu_ABOUT_US_header'); ?></a></li>
           <li ><a href="<?php echo site_url("Pages/contact_us")?> "> <?php echo $this->lang->line('text_menu_Contact_header'); ?></a></li>
           <!-- <li class="btn-get-started scrollto" style="border: 0;padding: 0px;margin: 0px 5px 0px 8px;background: #812a54;" ><a href="https://elavst.ir/" target="_blank" style="padding: 4px;color: #d7e90e;" > <?php echo $this->lang->line('text_menu_word_header'); ?></a></li> -->
-          <li class="btn-get-started scrollto" style="border: 0;padding: 0px;margin: 0px 5px 0px 8px;background: #9a2727;" ><a href="https://elavst.ir/" target="_blank" style="padding: 4px;color: #ffffff;" > <?php echo $this->lang->line('text_menu_level_header'); ?></a></li>
+          <li class="btn-get-started scrollto" style="border: 0;padding: 0px;margin: 0px 5px 0px 8px;background: #7f2853;" ><a href="https://elavst.ir/" target="_blank" style="padding: 4px;color: #ffffff;" > <?php echo $this->lang->line('text_menu_level_header'); ?></a></li>
         <!-- <li>
         <select class="form-control" onchange="javascript:window.location.href='<?php echo base_url(); ?>MultiLanguageSwitcher/Lswitch/'+this.value;" style="height: 29px;">
     <option value="english" <?php if($this->session->userdata('site_lang') == 'english') echo 'selected="selected"'; ?>>English</option>
