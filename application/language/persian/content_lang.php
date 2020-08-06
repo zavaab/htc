@@ -29,8 +29,8 @@
     $lang['SECONDS'] = 'ثانبه';  
     // sign up section\
     
-    $lang['STAFF'] = 'کارمندان'; 
-    $lang['STAFF_TEXT'] = 'معلمان آموزش دیده و واجد شرایط و کادر پشتیبانی.'; 
+    $lang['STAFF'] = 'تیم ما'; 
+    $lang['STAFF_TEXT'] = ''; 
 
 
     $lang['STUDENT_SAY'] = 'دانش آموزان ما چه می گویند؟'; 
