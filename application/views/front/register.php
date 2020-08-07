@@ -1189,7 +1189,7 @@ function getCode(){
                     $("#resend").addClass("not_show");
 
                     
-                    var counter = 5;
+                    var counter = 60;
                     interval = setInterval(function() {
                         counter--;
                         // Display 'counter' wherever you want to display it.
