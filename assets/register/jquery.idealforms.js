@@ -16,15 +16,17 @@
       url: 'Must be a valid URL',
       number: 'Must be a number',
       range: 'Must be a number between {0} and {1}',
-      min: 'Must be at least {0} characters long',
-      max: 'Must be under {0} characters',
+      min: 'حداقل باید {0} کاراکتر باشد',
+      max: 'حداکثر باید {0} کاراکتر باشد',
       minoption: 'Select at least {0} options',
       maxoption: 'Select no more than {0} options',
       minmax: 'Must be between {0} and {1} characters long',
       select: 'Select an option',
       extension: 'File(s) must have a valid extension ({*})',
       equalto: 'Must have the same value as the "{0}" field',
-      date: 'Must be a valid date {0}'
+      date: 'Must be a valid date {0}',
+      code_meli: ':کد ملی معتبر وارد نمایدد {0}',
+      mobile: 'موبایل معتبر وارد نمایید. برای مثال: 09123068775'
     
     };
     
@@ -567,7 +569,7 @@
     
           var self = this,
               isCustom = typeof this.opts.buildNavItems == 'function',
-              item = function(val){ return '<li><a href="#" tabindex="-1">'+ val +'</a></li>'; },
+              item = function(val){ return '<li style="pointer-events: none;"><a  href="#" tabindex="-1">'+ val +'</a></li>'; },
               items;
     
           items = isCustom ?
@@ -693,8 +695,10 @@
             , hasRules = ! $.isEmptyObject(this.opts.rules)
             , buildNavItems = this.opts.steps.buildNavItems
             , counter = hasRules
-              ? '<span class="counter"/>'
-              : '<span class="counter zero">0</span>';
+              ? ''
+              : '';
+              // ? '<span class="counter"/>'
+              // : '<span class="counter zero">0</span>';
     
           if (this.opts.steps.buildNavItems) {
             this.opts.steps.buildNavItems = function(i) {
@@ -1322,7 +1326,51 @@
     
         return input.value == $target.val();
       },
-    
+
+      mobile: function( input, value, format) {
+        var regex = new RegExp(/^0(9)\d{9}$/);
+        return regex.test( value );
+      },
+      code_meli: function(input, value, format) {
+        
+        var code = value;
+
+                var e = '۰'.charCodeAt(0);
+                code = code.replace(/[۰-۹]/g, function(t) {
+                    return t.charCodeAt(0) - e;
+                });
+
+                // convert arabic indic digits [٠١٢٣٤٥٦٧٨٩]
+                e = '٠'.charCodeAt(0);
+                code = code.replace(/[٠-٩]/g, function(t) {
+                    return t.charCodeAt(0) - e;
+                });
+                
+                
+
+
+                // code.replace(/([۰-۹])/g, function(token) { return String.fromCharCode(token.charCodeAt(0) - 1728); });
+                if (parseInt(code) == 1111111111 || parseInt(code) == 2222222222 || parseInt(code) == 3333333333 ||
+                    parseInt(code) == 4444444444 || parseInt(code) == 5555555555 || parseInt(code) == 6666666666 ||
+                    parseInt(code) == 7777777777 || parseInt(code) == 8888888888 || parseInt(code) == 9999999999) {
+                    return false;
+                }
+          var L = code.length;
+        if(L>=11) return false;
+                if (L < 8 || parseInt(code, 10) == 0) return false;
+                code = ('0000' + code).substr(L + 4 - 10);
+                if (parseInt(code.substr(3, 6), 10) == 0) return false;
+                var c = parseInt(code.substr(9, 1), 10);
+                var s = 0;
+                for (var i = 0; i < 9; i++)
+                    s += parseInt(code.substr(i, 1), 10) * (10 - i);
+                s = s % 11;
+                return (s < 2 && c == s) || (s >= 2 && c == (11 - s));
+                return true;
+        
+
+        // end code meli
+      },
       date: function(input, value, format) {
     
         format = format || 'mm/dd/yyyy';

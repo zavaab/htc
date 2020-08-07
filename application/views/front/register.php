@@ -135,6 +135,10 @@ form.idealforms .error:after{
     }
     .btn_signup {
     background: #158722;
+    background: #086a7e;
+    border-radius: 8px;
+    padding: 3px 41px 5px 41px;
+    
     }
     .btn-get-started:hover {
     background: #16551d;
@@ -150,6 +154,114 @@ form.idealforms input, form.idealforms textarea, form.idealforms select, form.id
   padding: .20em;
 }
 
+.border_bottom{
+  border-bottom: 7px solid #7f2853;
+}
+.idealsteps-nav{
+  margin-bottom: 1em;
+    border-left: 4px solid #7f2853;
+}
+
+
+/* verification */
+#wrapper {
+
+  font-size: 1rem;
+  text-align: center;
+  box-sizing: border-box;
+  color: #333;
+}
+#wrapper #dialog {
+  border: solid 1px #ccc;
+  margin: 10px auto;
+  padding: 20px 30px;
+  display: inline-block;
+  box-shadow: 0 0 4px #ccc;
+  background-color: #FAF8F8;
+  overflow: hidden;
+  position: relative;
+  max-width: 450px;
+}
+#wrapper #dialog h3 {
+  margin: 0 0 10px;
+  padding: 0;
+  line-height: 1.25;
+}
+#wrapper #dialog span {
+
+}
+#wrapper #dialog #form {
+  max-width: 240px;
+  margin: 25px auto 0;
+  direction:ltr;
+}
+#wrapper #dialog #form input {
+  margin: 0 5px;
+  text-align: center;
+  line-height: 80px;
+  font-size: 30px;
+  border: solid 1px #ccc;
+  box-shadow: 0 0 5px #ccc inset;
+  outline: none;
+  width: 20%;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  border-radius: 3px;
+}
+#wrapper #dialog #form input:focus {
+  border-color: purple;
+  box-shadow: 0 0 5px purple inset;
+}
+#wrapper #dialog #form input::-moz-selection {
+  background: transparent;
+}
+#wrapper #dialog #form input::selection {
+  background: transparent;
+}
+#wrapper #dialog #form button {
+  margin: 25px 0 25px;
+  width: 100%;
+  padding: 6px;
+  background-color: #B85FC6;
+  border: none;
+  text-transform: uppercase;
+}
+#wrapper #dialog button.close {
+  border: solid 2px;
+  border-radius: 30px;
+  line-height: 19px;
+  font-size: 120%;
+  width: 22px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+#wrapper #dialog div {
+  position: relative;
+  z-index: 1;
+}
+#wrapper #dialog img {
+  position: absolute;
+  bottom: -70px;
+  right: -63px;
+}
+
+/* verification */
+
+#timer{
+  background: #7f2853;
+    padding: 0px 2px 0px 2px;
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.not_show {
+  display:none;
+}
+
+
+
 </style>
 
 <body>
@@ -158,13 +270,60 @@ form.idealforms input, form.idealforms textarea, form.idealforms select, form.id
     <!-- <h5 align="center">فرم ثبت نام</h5> -->
     <p align="center">مرکز تخصصی تافل و تربیت مدرس حدادیان</p>
   </h1>
-  <div class="container" style="    background: #f4f4f4">
+
+
+
+  
+  <div class="container" style="background: #f4f4f4" id="sms">
+    <div class="row" >
+      <div class="col-md-12 border_bottom" >
+        <div class="content" >
+
+          <div id="wrapper">
+            <div id="dialog">
+          
+          <div id="get_code">
+          <div><i class="fa fa-lock" style="font-size: 45px;color: #7f2853;"  aria-hidden="true"></i></div>
+              <h5>لطفا شماره همراه خود را وارد نمایید</h5>
+              
+           
+            <input id="mobile_verify"  style="border: solid 1px #ccc;box-shadow: 0 0 5px #ccc inset;direction:ltr;    padding: 4px;warning"
+            minlength="11" maxlength="11"
+             name="mobile_verify" type="text" autocomplete="off">
+             <button class="btn btn-warning btn-embossed" onclick="getCode();" > ارسال کد</button>
+                          
+          </div>
+                
+  
+          
+              <div id="form" class="not_show">
+              <h5>کد ارسال شده به موبایل خود را در کادر زیر وارد نمایید</h5>
+                <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" id="num1" /><input id="num2"   type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" /><input id="num3" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" /><input id="num4" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                <button class="btn btn-primary btn-embossed" onclick="check_sms()" >بررسی</button>
+  
+                 <div id="timer_dv" ><span>منقضی شدن کد: </span><span id="timer"></span> </div>
+              </div>
+              
+              <div class="not_show" id="resend">
+                <span>کد 5 رقمی را دریافت نکرده اید؟</span><br />
+                <a href="#" style="    color: #7f2853;font-weight: 900;" onclick="getCode()" >ارسال مجدد کد</a><br />
+                <a href="#">تغییر شماره موبایل</a>
+              </div>
+              
+            </div>
+          </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container" style="background: #f4f4f4" id="register_panel">
     <div class="row" >
 
-      <div class="col-md-12">
+      <div class="col-md-12 border_bottom" >
 
-
-        <div class="content">
+        <div  class="content">
           <div class="idealsteps-container">
             <nav class="idealsteps-nav"></nav>
             <form action="" novalidate autocomplete="off" class="idealforms">
@@ -181,13 +340,13 @@ form.idealforms input, form.idealforms textarea, form.idealforms select, form.id
                     <div class="col-md-6">
                       <div class="field">
                         <label class="main">نام:</label>
-                        <input id="firstname" name="firstname" type="text" autocomplete="off" v-model="v_firstname">
+                        <input id="firstname" minlength="30" maxlength="30" name="firstname" type="text" autocomplete="off" v-model="v_firstname">
                         <span class="error"></span> </div>
                     </div>
                     <div class="col-md-6">
                       <div class="field">
                         <label class="main">نام خانوادگی:</label>
-                        <input  id="lastname" name="lastname" autocomplete="off" type="text" v-model="v_lastname">
+                        <input  id="lastname" minlength="30" maxlength="30" name="lastname" autocomplete="off" type="text" v-model="v_lastname">
                         <span class="error"></span> </div>
                     </div>
                   </div>
@@ -196,13 +355,13 @@ form.idealforms input, form.idealforms textarea, form.idealforms select, form.id
                     <div class="col-md-6">
                       <div class="field">
                         <label class="main">نام پدر:</label>
-                        <input id="fathername" name="fathername" type="text" autocomplete="off" data-idealforms-ajax="ajax.php">
+                        <input id="fathername" minlength="30" maxlength="30" name="fathername" type="text" autocomplete="off" data-idealforms-ajax="ajax.php">
                         <span class="error"></span> </div>
                     </div>
                     <div class="col-md-6">
                       <div class="field">
                         <label class="main">شماره شناسنامه:</label>
-                        <input id="sh_number" name="sh_number" autocomplete="off" type="text">
+                        <input id="sh_number" name="sh_number" minlength="10" maxlength="10" autocomplete="off" type="text">
                         <span class="error"></span> </div>
                     </div>
                   </div>
@@ -211,13 +370,13 @@ form.idealforms input, form.idealforms textarea, form.idealforms select, form.id
                     <div class="col-md-6">
                       <div class="field">
                         <label class="main">کد ملی:</label>
-                        <input name="national" id="national" type="text" autocomplete="off" data-idealforms-ajax="ajax.php">
+                        <input name="national" id="national" minlength="10" maxlength="10" type="text" autocomplete="off" data-idealforms-ajax="ajax.php">
                         <span class="error"></span> </div>
                     </div>
                     <div class="col-md-6">
                       <div class="field">
                         <label class="main">سال تولد:</label>
-                        <input name="bdate" id="bdate" type="text">
+                        <input name="bdate" minlength="4" maxlength="4" id="bdate" type="text">
                         <span class="error"></span> </div>
                     </div>
                   </div>
@@ -243,7 +402,7 @@ form.idealforms input, form.idealforms textarea, form.idealforms select, form.id
                     <div class="col-md-6">
                       <div class="field">
                         <label class="main" >موبایل:</label>
-                        <input name="mobile" id="mobile" type="text" autocomplete="off">
+                        <input name="mobile" minlength="11" maxlength="11"  id="mobile" type="text" autocomplete="off">
                         <span class="error"></span> </div>
                     </div>
 
@@ -254,7 +413,7 @@ form.idealforms input, form.idealforms textarea, form.idealforms select, form.id
                     <div class="col-md-6">
                       <div class="field">
                         <label class="main">شغل:</label>
-                        <input name="job" type="text"  id="job" autocomplete="off" data-idealforms-ajax="ajax.php">
+                        <input name="job" type="text" minlength="50" maxlength="50"  id="job" autocomplete="off" data-idealforms-ajax="ajax.php">
                         <span class="error"></span> </div>
                     </div>
                     <div class="col-md-6">
@@ -272,7 +431,7 @@ form.idealforms input, form.idealforms textarea, form.idealforms select, form.id
       
                 <div class="field">
                   <label class="main">کلمه عبور:</label>
-                  <input name="password" id="password" type="password" autocomplete="off">
+                  <input name="password" id="password" type="password" minlength="30" maxlength="30" autocomplete="off">
                   <span class="error"></span> </div>
 
               </div>
@@ -280,7 +439,7 @@ form.idealforms input, form.idealforms textarea, form.idealforms select, form.id
               <div class="col-md-6">
                 <div class="field">
                   <label class="main">تکرار کلمه عبور:</label>
-                  <input name="confirmpass" id="confirmpass" type="password" autocomplete="off">
+                  <input name="confirmpass" id="confirmpass" minlength="30" maxlength="30" type="password" autocomplete="off">
                   <span class="error"></span> </div>
 
             </div>
@@ -291,7 +450,7 @@ form.idealforms input, form.idealforms textarea, form.idealforms select, form.id
                     <div class="col-md-6">
                       <div class="field">
                         <label class="main">رشته تحصیلی:</label>
-                        <input name="major" id="major" type="text" autocomplete="off">
+                        <input name="major" id="major" type="text" minlength="50" maxlength="50" autocomplete="off">
                         <span class="error"></span> </div>
 
                     </div>
@@ -714,8 +873,8 @@ form.idealforms input, form.idealforms textarea, form.idealforms select, form.id
         'lastname': 'required',
         'fathername': 'required',
         'sh_number': 'required',
-        'national': 'required',
-        'bdate': 'required',
+        'national': 'required code_meli',
+        'bdate': 'required min:4 max:4',
         'job': 'required',
         'major': 'required',
         'marital': 'required',
@@ -731,7 +890,7 @@ form.idealforms input, form.idealforms textarea, form.idealforms select, form.id
         // 'picture': 'required extension:jpg:png',
         // 'website': 'url',
         // 'hobbies[]': 'minoption:2 maxoption:3',
-        'mobile': 'required',
+        'mobile': 'required mobile',
         'agree': 'required',
         // 'zip': 'required zip',
         // 'options': 'select:default',
@@ -907,14 +1066,258 @@ form.idealforms input, form.idealforms textarea, form.idealforms select, form.id
           }
         });
 
+        $("#register_panel").addClass("not_show");;
+
 
 
         
       });
 
 
+function viewnext(){
+  $('.next').show();
+      $('form.idealforms').idealforms('nextStep');
+      $("#fname").text($("#firstname").val());
+      $("#lname").text($("#lastname").val());
+      $("#ffname").text($("#fathername").val());
+      $("#ssh_number").text($("#sh_number").val());
+}
 
 
+
+function check_sms(){
+  var base_url = '<?php echo base_url();?>';
+  var num1=$("#num1").val();
+  var num2=$("#num2").val();
+  var num3=$("#num3").val();
+  var num4=$("#num4").val();
+
+  var otp=num1+num2+num3+num4;
+
+  $.ajax(
+            {
+            type: 'post',
+            url: base_url + "Register/check_sms",
+            data: { 
+                "otp": otp,
+            },
+            success: function (response) {
+              // alert(response);
+              switch (response) {
+										case "success":
+                    myStopFunction(interval);
+                      $("#sms").addClass("not_show");
+                      $("#register_panel").removeClass("not_show");
+											break;
+										case 'error':
+                      Swal.fire({
+                      icon: 'error',
+                      title: 'خطا',
+                      text: 'کد وارد شما صحیح نمی باشد، لطفا مجدد تلاش فرمایید',
+                      footer: '',
+                      confirmButtonText:'متوجه شدم'
+                    })
+											break;
+			
+					
+
+										default:
+                      alert("default")
+											break;
+                  }
+                  
+
+            },
+            error: function () {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'خطا',
+                    text: 'خطایی رخ داده است، لطفا دقایقی دیکر دوباره تلاش فرمایید',
+                    confirmButtonText:'متوجه شدم'
+                    // footer: '<a href>Why do I have this issue?</a>'
+                  })
+            }
+
+            });
+
+  
+ 
+
+
+}
+
+var interval;
+
+function getCode(){
+  var base_url = '<?php echo base_url();?>';
+  var mobile=$("#mobile_verify").val();
+        var regex = new RegExp(/^0(9)\d{9}$/);
+        if(regex.test( mobile )==false){
+          Swal.fire({
+        icon: 'error',
+        title: 'خطا',
+        text: ' موبایل معتبر وارد نمایید',
+        footer: '',
+        confirmButtonText:'متوجه شدم'
+      })
+        }else{
+
+
+          $.ajax(
+            {
+            type: 'post',
+            url: base_url + "Register/sent_code",
+            data: { 
+                "mobile": mobile,
+            },
+            success: function (response) {
+              // alert(response);
+              switch (response) {
+										case "success":
+                      Swal.fire({
+                      icon: 'success',
+                      title: 'موفقیت آمیز',
+                      text: 'کد 4 رقمی به شماره موبایل وارد شده ارسال شد، لطفا کد دریافتی را در کادر نمایش داده شده وارد نمایید',
+                      footer: '',
+                      confirmButtonText:'متوجه شدم'
+                    });
+
+                    $("#get_code").addClass("not_show");
+                    $("#mobile_verify").removeClass("not_show");
+                    $("#form").removeClass("not_show");
+                    $("#timer_dv").removeClass("not_show");
+                    $("#resend").addClass("not_show");
+
+                    
+                    var counter = 5;
+                    interval = setInterval(function() {
+                        counter--;
+                        // Display 'counter' wherever you want to display it.
+                        if (counter <= 0) {
+                            clearInterval(interval);
+                            // $('#timer').html("<h3>Count down complete</h3>");  
+                            $("#resend").removeClass("not_show");
+                            $('#timer_dv').addClass("not_show");
+                            $('#timer').text(counter);
+                            return;
+                        }else{
+                          $('#timer').text(counter);
+                          
+                        }
+                    }, 1000);
+
+
+                    
+                    
+               
+
+
+
+											break;
+										case 'error':
+                      Swal.fire({
+                      icon: 'error',
+                      title: 'خطا',
+                      text: 'کد 4 رقمی ارسال نشد، لطفا لحظاتی دیگر برای ثبت نام اقدام نمایید',
+                      footer: '',
+                      confirmButtonText:'متوجه شدم'
+                    })
+											break;
+										case 'error':
+                      alert("error")
+											break;
+										case ' ':
+                      alert("error")
+											break;
+
+										default:
+                      alert("default")
+											break;
+                  }
+                  
+
+            },
+            error: function () {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'خطا',
+                    text: 'خطایی رخ داده است، لطفا دقایقی دیکر دوباره تلاش فرمایید',
+                    confirmButtonText:'متوجه شدم'
+                    // footer: '<a href>Why do I have this issue?</a>'
+                  })
+            }
+
+            });
+
+
+
+
+
+        }
+
+}
+
+
+function myStopFunction(idVar) {
+  clearInterval(idVar);
+}
+
+
+
+$(function() {
+  'use strict';
+
+  var body = $('#form');
+
+  function goToNextInput(e) {
+    var key = e.which,
+      t = $(e.target),
+      sib = t.next('input');
+
+    if (key != 9 && (key < 48 || key > 57)) {
+      e.preventDefault();
+      return false;
+    }
+
+    if (key === 9) {
+      return true;
+    }
+
+    if (!sib || !sib.length) {
+      sib = body.find('input').eq(0);
+    }
+    sib.select().focus();
+  }
+
+  function onKeyDown(e) {
+    var key = e.which;
+
+    if (key === 9 || (key >= 48 && key <= 57)) {
+      return true;
+    }
+
+    e.preventDefault();
+    return false;
+  }
+  
+  function onFocus(e) {
+    $(e.target).select();
+  }
+
+  body.on('keyup', 'input', goToNextInput);
+  body.on('keydown', 'input', onKeyDown);
+  body.on('click', 'input', onFocus);
+
+})
+
+// var regex = new RegExp(/[0-9]|\./);
+//         if(regex.test( key )==false){
+          
+//         e.preventDefault();
+//         return false;
+//         }else{
+//           return true;
+//         }
 
   </script>
 </body>

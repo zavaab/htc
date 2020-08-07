@@ -1,12 +1,11 @@
 <?php
+namespace Kavenegar;
 
-// namespace Kavenegar;
-
-// use Kavenegar\Exceptions\ApiException;
-// use Kavenegar\Exceptions\HttpException;
-// use Kavenegar\Exceptions\RuntimeException;
-// use Kavenegar\Enums\ApiLogs ;
-// use Kavenegar\Enums\General;
+use Kavenegar\Exceptions\ApiException;
+use Kavenegar\Exceptions\HttpException;
+use Kavenegar\Exceptions\RuntimeException;
+use Kavenegar\Enums\ApiLogs ;
+use Kavenegar\Enums\General;
 
 class KavenegarApi
 {
@@ -292,8 +291,6 @@ class KavenegarApi
         return $this->execute($path, $params); 
     }
 }
-
 // $KavenegarApi =new KavenegarApi("59594A482B2F574C544E4F424B414279595041536E5268424B6A327179756C6E53546569726151554D6C413D" , false);
 // $res=$KavenegarApi->Send("10000500550500", "09178326452", "کد پیگیری شما 87878787 می باشد", $date = null, $type = null, $localid = null);
-
 ?>
