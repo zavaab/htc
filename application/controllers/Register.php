@@ -142,7 +142,7 @@ class Register extends CI_Controller {
 	public function sent_code(){
 		$mobile=$this->input->post('mobile');
 		$otp=$this->n_digit_random(4);
-		$otp=1234;
+		// $otp=1234;
 		$this->session->set_userdata('otp', $otp);
 		$this->session->set_userdata('mobile', $mobile);
 		$otp=$usrlogin=$this->session->userdata['otp'];
@@ -155,7 +155,7 @@ class Register extends CI_Controller {
 			'message'=>$msg
 		];
 		
-		// $this->sendsms($data);
+		$this->sendsms($data);
 		
 		
 		echo "success";
