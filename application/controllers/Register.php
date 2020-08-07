@@ -165,7 +165,7 @@ class Register extends CI_Controller {
 		$temp = "";
 	  
 		for ($i = 0; $i < $digits; $i++) {
-		  $temp .= rand(0, 9);
+		  $temp .= rand(1, 9);
 		}
 	  
 		return (int)$temp;
